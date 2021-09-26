@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @*<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>*@
+    <script src="~/Scripts/jquery-3.5.1.slim.min.js"></script>
+    @*<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>*@
+    <script src="~/Scripts/popper.min.js"></script>
+    @*<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>*@
+    <link rel="stylesheet" href="~/styles/footer.css">
+
+    <!-- Website CSS style -->
+    <link rel="stylesheet" type="stylesheet" href="~/styles/template.css">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <style>
+        .navbar-inverse {
+            background-color: #fff;
+            border-color: #f2dede;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar navbar-inverse-branca navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="~/Home/index">
+                    <img src="~/img/logoprojeto.png" width="100" height="30" alt="" />
+                </a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    @if (Session["Perfil"].Equals(SejaHeroi.Enums.PerfilUsuario.Administrador))
+                    {
+                        <li>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Controle de Usuários
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("Usuários", "Index", "Usuario")</li>
+                                <li>@Html.ActionLink("Criar Usuário", "Create", "Usuario")</li>
+                            </ul>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        <hr>
+        @Html.Partial("_Notifications")
+        @RenderBody()
+        <hr />
+
+        <footer class="footer-distributed">
+            <hr>
+            <div class="footer-left">
+                <span><img src="~/img/logoprojeto.png" width="100" height="30" alt=""></span>
+                <p class="footer-links">
+                    <a href="#" class="link-1">Home</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Cases</a>
+                    <a href="#">Números</a>
+                    <a href="#">Contribuir</a>
+                    <a href="#">Sobre-nos</a>
+                    <a href="#">Contato</a>
+                </p>
+                <p class="footer-company-name">Seja um herói © @DateTime.Now.Year Todos os direitos reservados</p>
+            </div>
+
+            <div class="footer-center">
+                <div>
+                    <i class="fa fa-envelope"></i>
+                    <p><a href="mailto:support@company.com">contato@sejaumheroi.com.br</a></p>
+                </div>
+            </div>
+
+            <div class="footer-right">
+
+                <p class="footer-company-about">
+                    <span>Sobre</span>
+                    Seja um herói! Adote um pet e seja o herói dele. Ele vai ser seu fâ para sempre.<br />
+                    Buscamos facilitar o trabalho dos heróis.
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

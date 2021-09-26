@@ -1,0 +1,124 @@
+﻿@model SejaHeroi.Models.Usuario
+
+@{
+    ViewBag.Title = "index";
+}
+
+<!doctype html>
+<html lang="pt">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="css/estilo.css" media="screen" />
+
+    <!-- Bootstrap CSS -->
+    @*<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">*@
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+    <title>Seja um Herói</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: rgb(219, 226, 226);
+        }
+
+        .row {
+            background: white;
+            border-radius: 30px;
+            box-shadow: 12px 12px 12px grey;
+        }
+
+        img {
+            border-top-left-radius: 30px;
+            border-bottom-left-radius: 30px;
+        }
+
+        .btn1 {
+            border: none;
+            outline: none;
+            height: 50px;
+            width: 100%;
+            background-color: rgb(51, 153, 255);
+            color: white;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+            .btn1:hover {
+                background: white;
+                border: 1px solid;
+                color: rgb(51, 153, 255);
+            }
+
+        .btn2 {
+            border: none;
+            outline: none;
+            height: 50px;
+            width: 100%;
+            background-color: rgb(255, 0, 0);
+            color: white;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+            .btn2:hover {
+                background: white;
+                border: 1px solid;
+                color: rgb(255, 0, 0);
+            }
+    </style>
+</head>
+<body>
+
+    @using (Html.BeginForm("Autenticar", "Login", FormMethod.Post))
+    { 
+        <section class="form my-4 mx-5">
+            <div class="container"> 
+                <div class="row no-gutters">
+                    <div class="col-lg-5">
+                        <img src="../img/pets.jpg" class="img-fluid" alt="">
+                    </div>
+                    <div class="col-lg-7 px-5 pt-5">
+                        <h1 class="font-weight-bold py-3"><img src="../img/logoprojeto.png" class="img-fluid" alt=""></h1>
+                        <h4>Entre com sua conta</h4>
+                        <form>
+                            @Html.Partial("_Notifications")
+                            <div class="form-row">
+                                <div class="col-lg-7">
+                                    @Html.EditorFor(model => model.Login, new { htmlAttributes = new { @class = "form-control my-3 p-4", placeholder = "Login" } })
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-lg-7">
+                                    @Html.EditorFor(model => model.Senha, new { htmlAttributes = new { @class = "form-control p-4", placeholder = "Senha", type = "password" } })
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-lg-7">
+                                    <input type="submit" value="Entrar" class="btn1 mt-3 mb-1" />
+                                </div>
+                            </div>
+                            <p>Ainda não é um herói?<a href='@Url.Action("Create", "Usuario")'> Cadastre-se!</a></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    }
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/popper.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
