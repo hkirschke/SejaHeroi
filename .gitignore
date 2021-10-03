@@ -7,3 +7,11 @@ obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
 obj/Debug/SejaHeroi.csproj.AssemblyReference.cache
 obj/Debug/SejaHeroi.dll
 obj/Debug/SejaHeroi.pdb
+*.txt
+*.dll
+*.cache
+obj/Debug/SejaHeroi.csproj.FileListAbsolute.txt
+bin/SejaHeroi.dll
+bin/SejaHeroi.pdb
+obj/Debug/SejaHeroi.csproj.FileListAbsolute.txt
+obj/Debug/SejaHeroi.pdb
