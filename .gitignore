@@ -1,0 +1,9 @@
+
+App_Data/SejaHeroi.mdf
+App_Data/SejaHeroi_log.ldf
+bin/SejaHeroi.dll
+bin/SejaHeroi.pdb
+obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+obj/Debug/SejaHeroi.csproj.AssemblyReference.cache
+obj/Debug/SejaHeroi.dll
+obj/Debug/SejaHeroi.pdb
