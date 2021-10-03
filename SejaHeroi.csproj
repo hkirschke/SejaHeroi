@@ -172,6 +172,9 @@
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Data\SejaHeroiContext.cs" />
     <Compile Include="Enums\PerfilUsuario.cs" />
+    <Compile Include="Enums\PorteAnimal.cs" />
+    <Compile Include="Enums\Racas.cs" />
+    <Compile Include="Enums\Situacao.cs" />
     <Compile Include="Extensions\NotificationExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -185,6 +188,8 @@
       <DependentUpon>PrimeiraMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Animal\Animal.cs" />
+    <Compile Include="Models\Animal\AnimalViewModel.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
