@@ -167,9 +167,12 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\FichaCastracaoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
+    <Compile Include="Data\DataUtil\SejaHeroiContextAnimalUtil.cs" />
+    <Compile Include="Data\DataUtil\SejaHeroiContextFichaUtil.cs" />
     <Compile Include="Data\SejaHeroiContext.cs" />
     <Compile Include="Enums\PerfilUsuario.cs" />
     <Compile Include="Enums\PorteAnimal.cs" />
@@ -190,6 +193,9 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Animal\Animal.cs" />
     <Compile Include="Models\Animal\AnimalViewModel.cs" />
+    <Compile Include="Models\FichaCastracao\EquipeVeterinario.cs" />
+    <Compile Include="Models\FichaCastracao\FichaCastracao.cs" />
+    <Compile Include="Models\FichaCastracao\FichaCastracaoViewModel.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -256,7 +262,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Data\DataUtil\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
