@@ -3,17 +3,17 @@
   using SejaHeroi.Models;
   using SejaHeroi.Models.Animal;
   using System;
-  using System.Data.Entity.Migrations;
+    using System.Data.Entity.Migrations;
 
-  internal sealed class Configuration : DbMigrationsConfiguration<SejaHeroi.Data.SejaHeroiContext>
-  {
-    public Configuration()
+    internal sealed class Configuration : DbMigrationsConfiguration<SejaHeroi.Data.SejaHeroiContext>
     {
-      AutomaticMigrationsEnabled = false;
-    }
+        public Configuration()
+        {
+            AutomaticMigrationsEnabled = false;
+        }
 
-    protected override void Seed(SejaHeroi.Data.SejaHeroiContext context)
-    {
+        protected override void Seed(SejaHeroi.Data.SejaHeroiContext context)
+        {
       var UsuarioAdmin = new Guid("8807B82C-D6AE-464F-B3A8-1904900F7150");
       var UsuarioNaoAdmin = new Guid("E90C50D7-7C58-4A1F-9C7C-2CD446EDDAF3");
 
@@ -65,5 +65,5 @@
          new EquipeVeterinario { EquipeVeterinarioID = new Guid("dd763414-4410-4243-87fa-ba9cea0ed6ca"), Nome = "WonderWoman" }
          );
     }
-  }
+    }
 }
