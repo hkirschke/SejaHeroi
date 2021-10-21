@@ -1,0 +1,80 @@
+﻿@model IEnumerable<SejaHeroi.Models.Animal.AnimalViewModel>
+
+@{
+    //ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink("Cadastrar um animal", "Create")
+</p>
+<table class="table table-striped table-bordered">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Idade)
+            </th>
+            <th>
+                Porte
+            </th>
+            <th>
+                Raça
+            </th>
+            <th>
+                Situação
+            </th>
+            <th>
+                Vacinas
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Idade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TamanhoAnimal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RacaAnimal)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Situacao)
+            </td>
+            <td>
+                @if (item.StatusVacina)
+                {
+                    <span>Em dia</span>
+                }
+                else
+                {
+                    <span>Com pendência</span>
+                }
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", "Animal", new { id = item.AnimalID }, new { @class = "btn btn-primary" })
+                @*@Html.ActionLink("Details", "Details", "Animal", new { id = item.AnimalID }, new { @class = "btn btn-primary" })*@
+                @Html.ActionLink("Excluir", "Delete", "Animal", new { id = item.AnimalID }, new { @class = "btn btn-primary" })
+
+                @if (!Session["UsuarioID"].ToString().Equals(item.UsuarioID.ToString()) && (item.Situacao != SejaHeroi.Enums.Situacao.Adotado && item.Situacao != SejaHeroi.Enums.Situacao.Desaparecido))
+                {
+                    @Html.ActionLink("Adotar", "Adotar", "Animal", new { id = item.AnimalID },
+                   new { @class = "btn btn-primary", onclick = "return confirm('Deseja adotar o animal ?');" })
+                }
+            </td>
+        </tr>
+    }
+</table>

@@ -50,6 +50,22 @@
                             </ul>
                         </li>
                     }
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Castração<span class="caret"></span> </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Consultar Castrações", "Index", "FichaCastracao")</li>
+                            <li>@Html.ActionLink("Agendar Castração", "Create", "FichaCastracao")</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Animais <span class="caret"></span> </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Cadastrar Animal", "Create", "Animal")</li>
+                            <li>@Html.ActionLink("Meus Animais", "Index", "Animal")</li>
+                            <li>@Html.ActionLink("Animais para doação", "AnimaisDoacoes", "Animal")</li>
+                            <li>@Html.ActionLink("Animais Desaprecidos", "AnimaisDesaparecidos", "Animal")</li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
