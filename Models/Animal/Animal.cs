@@ -24,6 +24,6 @@ namespace SejaHeroi.Models.Animal
         public string Resenha { get; set; }
         public byte[] Foto { get; set; }
 
-        public bool StatusVacina { get; set; }
+        public StatusVacina StatusVacina { get; set; }
     }
 }

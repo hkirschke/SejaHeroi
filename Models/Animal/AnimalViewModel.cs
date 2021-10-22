@@ -29,6 +29,6 @@ namespace SejaHeroi.Models.Animal
 
         public byte[] ByteFoto { get; set; }
 
-        public bool StatusVacina { get; set; }
+        public StatusVacina StatusVacina { get; set; }
     }
 }
