@@ -54,19 +54,11 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Situacao)
             </td>
-            <td>
-                @if (item.StatusVacina)
-                {
-                    <span>Em dia</span>
-                }
-                else
-                {
-                    <span>Com pendência</span>
-                }
+            <td> 
+                @Html.DisplayFor(modelItem => item.StatusVacina)
             </td>
             <td>
-                @Html.ActionLink("Editar", "Edit", "Animal", new { id = item.AnimalID }, new { @class = "btn btn-primary" })
-                @*@Html.ActionLink("Details", "Details", "Animal", new { id = item.AnimalID }, new { @class = "btn btn-primary" })*@
+                @Html.ActionLink("Editar", "Edit", "Animal", new { id = item.AnimalID }, new { @class = "btn btn-primary" }) 
                 @Html.ActionLink("Excluir", "Delete", "Animal", new { id = item.AnimalID }, new { @class = "btn btn-primary" })
 
                 @if (!Session["UsuarioID"].ToString().Equals(item.UsuarioID.ToString()) && (item.Situacao != SejaHeroi.Enums.Situacao.Adotado && item.Situacao != SejaHeroi.Enums.Situacao.Desaparecido))
