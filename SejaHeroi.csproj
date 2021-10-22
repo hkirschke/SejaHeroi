@@ -178,10 +178,15 @@
     <Compile Include="Enums\PerfilUsuario.cs" />
     <Compile Include="Enums\PorteAnimal.cs" />
     <Compile Include="Enums\Racas.cs" />
+    <Compile Include="Enums\StatusVacina.cs" />
     <Compile Include="Enums\Situacao.cs" />
     <Compile Include="Extensions\NotificationExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Alteracao_animal.cs" />
+    <Compile Include="Migrations\Alteracao_animal.designer.cs">
+      <DependentUpon>Alteracao_animal.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\_rebuild_migrations.cs" />
     <Compile Include="Migrations\_rebuild_migrations.designer.cs">
@@ -261,6 +266,11 @@
     <Content Include="Views\Animal\Details.cshtml" />
     <Content Include="Views\Animal\Edit.cshtml" />
     <Content Include="Views\Animal\Index.cshtml" />
+    <Content Include="Views\FichaCastracao\Create.cshtml" />
+    <Content Include="Views\FichaCastracao\Delete.cshtml" />
+    <Content Include="Views\FichaCastracao\Details.cshtml" />
+    <Content Include="Views\FichaCastracao\Edit.cshtml" />
+    <Content Include="Views\FichaCastracao\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -279,6 +289,9 @@
     <Content Include="Scripts\jquery-3.5.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Migrations\Alteracao_animal.resx">
+      <DependentUpon>Alteracao_animal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\_rebuild_migrations.resx">
       <DependentUpon>_rebuild_migrations.cs</DependentUpon>
     </EmbeddedResource>
