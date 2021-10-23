@@ -30,6 +30,7 @@ namespace SejaHeroi.Controllers
                                join equipeVetList in _SejaHeroiContext.EquipeVeterinarios.ToList()
                                on agendamentosList.EquipeVeterinarioID equals equipeVetList.EquipeVeterinarioID
                                where agendamentosList.UsuarioID == new Guid(Session["UsuarioID"].ToString())
+                               && animalList.Situacao != Enums.Situacao.Desaparecido
                                select new FichaCastracaoViewModel
                                {
                                  NomeAnimal = animalList.Nome,
@@ -45,7 +46,8 @@ namespace SejaHeroi.Controllers
                                join animalList in _SejaHeroiContext.Animals.ToList()
                                on agendamentosList.AnimalID equals animalList.AnimalID
                                join equipeVetList in _SejaHeroiContext.EquipeVeterinarios.ToList()
-                               on agendamentosList.EquipeVeterinarioID equals equipeVetList.EquipeVeterinarioID 
+                               on agendamentosList.EquipeVeterinarioID equals equipeVetList.EquipeVeterinarioID
+                               where animalList.Situacao != Enums.Situacao.Desaparecido
                                select new FichaCastracaoViewModel
                                {
                                  NomeAnimal = animalList.Nome,
