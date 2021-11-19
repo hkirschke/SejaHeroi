@@ -197,6 +197,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Animal\Animal.cs" />
     <Compile Include="Models\Animal\AnimalViewModel.cs" />
+    <Compile Include="Models\Endereco.cs" />
     <Compile Include="Models\FichaCastracao\EquipeVeterinario.cs" />
     <Compile Include="Models\FichaCastracao\FichaCastracao.cs" />
     <Compile Include="Models\FichaCastracao\FichaCastracaoViewModel.cs" />
