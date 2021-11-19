@@ -12,6 +12,5 @@ namespace SejaHeroi.Data
     public System.Data.Entity.DbSet<SejaHeroi.Models.FichaCastracao> FichaCastracaos { get; set; }
     public System.Data.Entity.DbSet<SejaHeroi.Models.EquipeVeterinario> EquipeVeterinarios { get; set; }
     public System.Data.Entity.DbSet<SejaHeroi.Models.Endereco> Enderecoes { get; set; } 
-    public System.Data.Entity.DbSet<SejaHeroi.Models.EquipeVeterinario> EquipeVeterinarios { get; set; }
   }
 }
